@@ -1,0 +1,5 @@
+.docker/cw/credentials
+CLAUDE.md
+.claude
+src/logs/*.log*
+!src/logs/.gitkeep
