@@ -11,13 +11,11 @@ The solution uses a dual-formatter approach:
 
 ```mermaid
 flowchart TD
-    A[Flask App] --> B[Logging System<br/>(dual formatters)]
-
-    B --> C[Console Handler<br/>Human-readable + extras]
-    B --> D[File Handler<br/>JSON (hourly rotation)]
-
-    D --> E[Rotated files<br/>app.log.YYYY-MM-DD_HH]
-    E --> F[CloudWatch Agent<br/>auto_removal: true]
+    A[Flask App] --> B[Logging System (dual formatters)]
+    B --> C[Console Handler - Human-readable + extras]
+    B --> D[File Handler - JSON (hourly rotation)]
+    D --> E[Rotated files app.log.YYYY-MM-DD_HH]
+    E --> F[CloudWatch Agent (auto_removal: true)]
     F --> G[AWS CloudWatch Logs]
 ```
 
