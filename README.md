@@ -9,7 +9,7 @@ The solution uses a dual-formatter approach:
 - **File output**: Structured JSON for CloudWatch with hourly rotation
 - **CloudWatch Agent**: Reads rotated files and automatically deletes them after upload
 
-```
+```mermaid
 flowchart TD
     A[Flask App] --> B[Logging System<br/>(dual formatters)]
 
