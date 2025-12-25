@@ -267,5 +267,5 @@ fields @timestamp, level, logger, message, user_id, response_time_ms
 | limit 100
 ```
 
-This logging architecture uses sidecard patterns to decouple application logic from logging concerns, ensuring robust, production-ready logging with minimal disk usage and automatic log management via AWS CloudWatch.
+This logging architecture uses sidecar patterns to decouple application logic from logging concerns, ensuring robust, production-ready logging with minimal disk usage and automatic log management via AWS CloudWatch.
 
