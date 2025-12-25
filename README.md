@@ -10,17 +10,15 @@ The solution uses a dual-formatter approach:
 - **CloudWatch Agent**: Reads rotated files and automatically deletes them after upload
 
 ```
-Flask App
-    ↓
-Logging System (dual formatters)
-    ├─→ Console Handler → Human-readable + extras
-    └─→ File Handler → JSON (hourly rotation)
-            ↓
-        Rotated files (app.log.YYYY-MM-DD_HH)
-            ↓
-        CloudWatch Agent (auto_removal: true)
-            ↓
-        AWS CloudWatch Logs
+flowchart TD
+    A[Flask App] --> B[Logging System<br/>(dual formatters)]
+
+    B --> C[Console Handler<br/>Human-readable + extras]
+    B --> D[File Handler<br/>JSON (hourly rotation)]
+
+    D --> E[Rotated files<br/>app.log.YYYY-MM-DD_HH]
+    E --> F[CloudWatch Agent<br/>auto_removal: true]
+    F --> G[AWS CloudWatch Logs]
 ```
 
 The logging system uses two custom formatters to serve different purposes:
